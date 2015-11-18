@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<div class="page-header"><h1>Welcome To The...Quote Machine</h1></div>
+<div class="jumbotron">
+  <h1>Quote Machine</h1>
+  <br>
+  <%= @quotes.quote.to_s %>
+  <br>
+  <br>
+  <button id="refresh" type="button" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-eye-open"></span> View New Quote</button>
+</div>
+<br>
+<div class="text-center">
+  Are you here by mistake?
+  <br>
+
+  Perhaps you were looking for
+  <br>
+  <a href="http://arniequotes.bitballoon.com/">Arnold Schwarzenegger Quotes</a>
+</div>
+<br>
+<br>
+
+<button id="add" type="button" class="btn btn-info btn-lg btn-block"><span class="glyphicon glyphicon-pencil"></span> Add A New Quote</button>
+
+
+<script>
+  $(document).ready(function() {
+
+ $('.form').hide(); //Initially form wil be hidden.
+
+  $('#add').click(function() {
+   $('.form').show();//Form shows on button click
+
+   });
+ });
+
+$('#refresh').click(function() {
+    location.reload();
+});
+</script>
+
+<div class="form">
+  <%= render :partial => 'form'%>
+</div>
